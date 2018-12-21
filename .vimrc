@@ -47,4 +47,3 @@ if &term == "screen" || &term == "xterm"
 endif
 
 let &titleold= $USER . "@" . hostname() . " " . getcwd()
-"autocmd BufWinLeave * set titleold
