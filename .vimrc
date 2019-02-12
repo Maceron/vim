@@ -8,7 +8,7 @@ set number
 " indent with two spaces by default
 set expandtab
 set tabstop=2
-set softtabstop=0 " disable
+set softtabstop=2
 set shiftwidth=0 " when zero, the tabstop value is used
 
 " colors
