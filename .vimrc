@@ -16,8 +16,8 @@
 " So run this manually as sudo:
   " sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-" Then uncomment these 2 lines and open vim as sudo, watch it install, then comment these again:
-  " so ~/vim/plugins.vim
+" Then uncomment these 2 lines and open vim as sudo, watch it install, then comment the autocmd again, leave the so ~/vim/plugins.vim
+"so ~/vim/plugins.vim
   " autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 
 " show line numbers
