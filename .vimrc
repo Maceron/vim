@@ -1,15 +1,24 @@
-" Install and run vim-plug on first run
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" This assumes your .vimrc is in ~/ and you cloned this repo as ~/vim/
+" You can choose your plugins by editing ~/vim/plugins.vim
+" I have included these:
+"   vim-surround (stuff like automatically surround block with brackets/tokens)
+"     https://github.com/tpope/vim-surround
+"   vim-eunuch (execute UNIX shell commands inside vim, eg :Chmod :SudoEdit :Move :CFind)
+"     https://github.com/tpope/vim-eunuch
+"   vim-multiple-cursors (take simulatenous action at multiple positions)
+"     https://github.com/terryma/vim-multiple-cursors#quick-start
+"   fzf and fzf.vim (amazing fuzzy searching and beyond)
+"     https://github.com/junegunn/fzf.vim
 
-so ~/cameron/plugins.vim
+" To install vim-plug and the chosen plugins
+" There was a way to run this automatically whenever you run vim, but I ran into bugs eg. permissions on prod
 
-" highlight current cursor line, with a notch after column 80
-" set cursorline
-" set colorcolumn=81
+" So run this manually as sudo:
+  " sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+" Then uncomment these 2 lines and open vim as sudo, watch it install, then comment these again:
+  " so ~/vim/plugins.vim
+  " autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 
 " show line numbers
 set number
@@ -56,6 +65,3 @@ if &term == "screen" || &term == "xterm"
 endif
 
 let &titleold= $USER . "@" . hostname() . " " . getcwd()
-
-
-
