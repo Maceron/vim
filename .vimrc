@@ -1,3 +1,12 @@
+" Install and run vim-plug on first run
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+so ~/cameron/plugins.vim
+
 " highlight current cursor line, with a notch after column 80
 " set cursorline
 " set colorcolumn=81
@@ -47,3 +56,6 @@ if &term == "screen" || &term == "xterm"
 endif
 
 let &titleold= $USER . "@" . hostname() . " " . getcwd()
+
+
+
